@@ -14,9 +14,9 @@ export const Easing = { // tslint:disable-line:variable-name
     },
 
     InOut(k: number): number {
-      if (k * 2 < 1) {
-        k *= 2;
+      k *= 2;
 
+      if (k < 1) {
         return 0.5 * k * k;
       }
 
@@ -55,6 +55,7 @@ export const Easing = { // tslint:disable-line:variable-name
 
     InOut(k: number): number {
       k *= 2;
+
       if (k < 1) {
         return 0.5 * k * k * k * k;
       }
