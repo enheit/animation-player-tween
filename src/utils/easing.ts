@@ -1,8 +1,8 @@
-export const Easing = {
+export const Easing = { // tslint:disable-line:variable-name
   Linear: {
     None(k: number): number {
       return k;
-    }
+    },
   },
   Quadratic: {
     In(k: number): number {
@@ -14,12 +14,14 @@ export const Easing = {
     },
 
     InOut(k: number): number {
-      if ((k *= 2) < 1) {
+      k *= 2;
+
+      if (k < 1) {
         return 0.5 * k * k;
       }
 
       return -0.5 * (--k * (k - 2) - 1);
-    }
+    },
   },
 
   Cubic: {
@@ -32,12 +34,14 @@ export const Easing = {
     },
 
     InOut(k: number): number {
-      if ((k *= 2) < 1) {
+      k *= 2;
+
+      if (k < 1) {
         return 0.5 * k * k * k;
       }
 
       return 0.5 * ((k -= 2) * k * k + 2);
-    }
+    },
   },
 
   Quartic: {
@@ -50,12 +54,14 @@ export const Easing = {
     },
 
     InOut(k: number): number {
-      if ((k *= 2) < 1) {
+      k *= 2;
+
+      if (k < 1) {
         return 0.5 * k * k * k * k;
       }
 
       return -0.5 * ((k -= 2) * k * k * k - 2);
-    }
+    },
   },
 
   Quintic: {
@@ -68,12 +74,14 @@ export const Easing = {
     },
 
     InOut(k: number): number {
-      if ((k *= 2) < 1) {
+      k *= 2;
+
+      if (k < 1) {
         return 0.5 * k * k * k * k * k;
       }
 
       return 0.5 * ((k -= 2) * k * k * k * k + 2);
-    }
+    },
   },
 
   Sinusoidal: {
@@ -87,7 +95,7 @@ export const Easing = {
 
     InOut(k: number): number {
       return 0.5 * (1 - Math.cos(Math.PI * k));
-    }
+    },
   },
 
   Exponential: {
@@ -108,12 +116,14 @@ export const Easing = {
         return 1;
       }
 
-      if ((k *= 2) < 1) {
+      k *= 2;
+
+      if (k < 1) {
         return 0.5 * Math.pow(1024, k - 1);
       }
 
       return 0.5 * (-Math.pow(2, -10 * (k - 1)) + 2);
-    }
+    },
   },
 
   Circular: {
@@ -126,12 +136,14 @@ export const Easing = {
     },
 
     InOut(k: number): number {
-      if ((k *= 2) < 1) {
+      k *= 2;
+
+      if (k < 1) {
         return -0.5 * (Math.sqrt(1 - k * k) - 1);
       }
 
       return 0.5 * (Math.sqrt(1 - (k -= 2) * k) + 1);
-    }
+    },
   },
 
   Elastic: {
@@ -179,31 +191,32 @@ export const Easing = {
       return (
         0.5 * Math.pow(2, -10 * (k - 1)) * Math.sin((k - 1.1) * 5 * Math.PI) + 1
       );
-    }
+    },
   },
 
   Back: {
     In(k: number): number {
-      var s = 1.70158;
+      const s = 1.70158;
 
       return k * k * ((s + 1) * k - s);
     },
 
     Out(k: number): number {
-      var s = 1.70158;
+      const s = 1.70158;
 
       return --k * k * ((s + 1) * k + s) + 1;
     },
 
     InOut(k: number): number {
-      var s = 1.70158 * 1.525;
+      const s = 1.70158 * 1.525;
+      k *= 2;
 
-      if ((k *= 2) < 1) {
+      if (k < 1) {
         return 0.5 * (k * k * ((s + 1) * k - s));
       }
 
       return 0.5 * ((k -= 2) * k * ((s + 1) * k + s) + 2);
-    }
+    },
   },
 
   Bounce: {
@@ -229,6 +242,6 @@ export const Easing = {
       }
 
       return Easing.Bounce.Out(k * 2 - 1) * 0.5 + 0.5;
-    }
-  }
+    },
+  },
 };
