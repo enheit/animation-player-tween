@@ -13,7 +13,9 @@ export class AnimationPlayerTween {
     this._alphaCopy = { ...this._alpha };
   }
 
-  interpolation(interpolationFunction: (startValue: number, endValue: number, normalizedValue: number) => number): AnimationPlayerTween {
+  interpolation(
+    interpolationFunction: (startValue: number, endValue: number, normalizedValue: number) => number,
+  ): AnimationPlayerTween {
     this._interpoaltionFunction = interpolationFunction;
 
     return this;
@@ -42,7 +44,7 @@ export class AnimationPlayerTween {
 
     progress = this._easingFunction(progress);
 
-    for (let prop in this._omega) {
+    for (const prop in this._omega) {
       if (prop in this._alpha) {
         const startValue = this._alphaCopy[prop];
         const endValue = this._omega[prop];
