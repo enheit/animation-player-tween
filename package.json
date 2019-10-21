@@ -1,6 +1,6 @@
 {
   "name": "animation-player-tween",
-  "version": "1.0.1-beta.3",
+  "version": "1.0.1",
   "description": "The animation player tween helper",
   "repository": {
     "type": "git",
