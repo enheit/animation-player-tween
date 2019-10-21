@@ -1,4 +1,5 @@
-# animation-player-tween
+# animation-player-tween [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/enheit/animation-player-tween/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/animation-player-tween.svg?style=flat)](https://www.npmjs.com/package/animation-player-tween) [![Build Status](https://travis-ci.org/enheit/animation-player-tween.svg)](https://travis-ci.org/enheit/animation-player-tween) [![Codecov Coverage](https://img.shields.io/codecov/c/github/enheit/animation-player-tween/master.svg?style=flat-square)](https://codecov.io/gh/enheit/animation-player-tween/)
+
 The animation tween helper for [animation-player](https://github.com/enheit/animation-player)
 
 ## Table of Contents
