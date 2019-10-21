@@ -7,6 +7,11 @@ cache:
 install:
   - npm install
 script:
+  - npm install codecov -g
   - npm run lint
   - npm run test
   - npm run build
+after_success:
+  - codecov
+env:
+  - CODECOV_TOKEN="87a409e2-2d71-4b91-a3ab-2e01e45e48ef"
